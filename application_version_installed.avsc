@@ -1,0 +1,9 @@
+{
+	"type": "record",
+	"name": "ApplicationVersionInstalled",
+	"fields": [
+	    {"name": "App", "type": "string"},
+	    {"name": "Version", "type": "string"},
+	    {"name": "Url", "type": "string"}
+	]
+}
