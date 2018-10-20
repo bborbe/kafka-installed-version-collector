@@ -54,7 +54,7 @@ func (s *Sender) Send(ctx context.Context, version avro.ApplicationVersionInstal
 	}
 	partition, offset, err := producer.SendMessage(&sarama.ProducerMessage{
 		Topic: s.KafkaTopic,
-		Key:   sarama.StringEncoder(fmt.Sprintf("%s-%s-%s", version.Url, version.App, version.Version)),
+		Key:   sarama.StringEncoder(fmt.Sprintf("%s-%s", version.Url, version.App)),
 		Value: &schema.AvroEncoder{SchemaId: schemaId, Content: buf.Bytes()},
 	})
 	if err != nil {
